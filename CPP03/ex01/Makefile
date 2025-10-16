@@ -1,7 +1,8 @@
 NAME = ScavTrap
 
 SRCS = src/main.cpp \
-		src/ClapTrap.cpp
+		src/ClapTrap.cpp \
+		src/ScavTrap.cpp
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

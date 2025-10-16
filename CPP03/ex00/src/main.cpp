@@ -6,23 +6,28 @@
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:41:27 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/14 19:17:46 by dsteiger         ###   ########.fr       */
+/*   Updated: 2025/10/16 19:23:37 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 
-int main(void)
+int	main(void)
 {
-    ClapTrap claptrap;
-    ClapTrap claptrap2(claptrap);
-    ClapTrap claptrap3;
-    claptrap3 = claptrap;
+	ClapTrap claptrap;
+	ClapTrap claptrap2(claptrap);
+	ClapTrap claptrap3;
+	ClapTrap claptrap4("Sauron");
+	claptrap3 = claptrap;
 
-    claptrap.attack("DOG");
-    claptrap.takeDamage(1);
-    claptrap.beRepaired(1);
-    std::cout << "> nergy points left: " << claptrap.getEnergyPoints() << std::endl;
-    claptrap.increaseAttack(3);
-    claptrap.attack("DOG");
+	claptrap.attack("Sauron");
+	claptrap4.takeDamage(claptrap.getAttackDamage());
+	claptrap.beRepaired(1);
+	std::cout << "> Energy points left: " << claptrap.getEnergyPoints() << std::endl;
+	claptrap.setIncreaseAttack(2);
+	claptrap.attack("Sauron");
+	claptrap4.takeDamage(claptrap.getAttackDamage());
+	claptrap4.getHitPoints();
+	claptrap4.beRepaired(3);
+    claptrap4.getHitPoints();
 }

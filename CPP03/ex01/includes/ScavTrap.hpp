@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/16 18:16:00 by dsteiger          #+#    #+#             */
+/*   Updated: 2025/10/16 18:16:01 by dsteiger         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCAVTRAP_H
 # define SCAVTRAP_H
 
@@ -13,7 +25,7 @@
 # define CYAN "\033[36m"
 # define WHITE "\033[37m"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
   private:
 

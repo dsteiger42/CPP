@@ -6,7 +6,7 @@
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:41:41 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/14 19:32:15 by dsteiger         ###   ########.fr       */
+/*   Updated: 2025/10/16 19:26:26 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 ClapTrap::ClapTrap()
 {
 	_Name = "Napolean";
+	_HitPoint = 10;
+	_EnergyPoints = 10;
+	_AttackDamage = 0;
+	std::cout << YELLOW << "> Default constructor activated" << RESET << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name)
+{
+	_Name = name;
 	_HitPoint = 10;
 	_EnergyPoints = 10;
 	_AttackDamage = 0;
@@ -62,14 +71,14 @@ void ClapTrap::attack(const std::string &target)
 	}
 	_EnergyPoints--;
 	std::cout << "> ClapTrap " << _Name << " attacks " << target
-                << ", causing " << _AttackDamage << " points of damage!\n";
+				<< ", causing " << _AttackDamage << " points of damage!\n";
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_HitPoint < 1)
 	{
-		std::cout << "> Claptrap " << _Name << " is dead!" << std::endl;
+		std::cout << "> ClapTrap " << _Name << " is dead!" << std::endl;
 		return ;
 	}
 	_HitPoint -= amount;
@@ -85,7 +94,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_HitPoint < 1)
 	{
-		std::cout << "> The enemy is dead\n";
+		std::cout << "> ClapTrap " << _Name << " is dead!\n";
 		return ;
 	}
 	if (_EnergyPoints < 1)
@@ -93,20 +102,65 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "> You have no energy. Try cocaine\n";
 		return ;
 	}
-	_HitPoint++;
-	_EnergyPoints--;
-	std::cout << "> ClapTrap " << _Name << " repairs itself " << amount << "hp!\n";
+	if (_HitPoint < 10)
+	{
+		if (_HitPoint + amount <= 10)
+		{
+			_HitPoint += amount;
+			_EnergyPoints--;
+			std::cout << "> ClapTrap " << _Name << " repairs itself and gained " << amount << "hp!" << std::endl;
+			std::cout << "> ClapTrap " << _Name << " now has " << _HitPoint << "hp!" << std::endl;
+		}
+		else
+		{
+			_HitPoint = 10;
+			std::cout << "> ClapTrap " << _Name << " repairs itself and is now full hp" << std::endl;
+		}
+	}
+	else
+	{
+		_HitPoint = 10;
+		std::cout << "> ClapTrap " << _Name << " is full hp" << std::endl; 
+	}
 }
 
-void ClapTrap::increaseAttack(unsigned int amount)
+void ClapTrap::setIncreaseAttack(unsigned int amount)
 {
-	std::cout << "> Attack damage before boost " << _AttackDamage << std::endl;
+	//std::cout << "> Attack damage before boost " << _AttackDamage << std::endl;
 	_AttackDamage += amount;
-	std::cout << "> ClapTrap " << _Name << " improves his A power by " << amount << " damage!" << std::endl;
-	std::cout << "> Attack damage after boost " << _AttackDamage << std::endl;
+	std::cout << "> ClapTrap " << _Name << " improves his power by " << amount << " damage!" << std::endl;
+	//std::cout << "> Attack damage after boost " << _AttackDamage << std::endl;
 }
 
 int ClapTrap::getEnergyPoints() const
 {
 	return (_EnergyPoints);
+}
+
+int ClapTrap::getAttackDamage() const
+{
+	if (_HitPoint < 1)
+	{
+		std::cout << "> Claptrap " << _Name << " is dead!" << std::endl;
+		return 0;
+	}
+	std::cout << "> Claptrap " << _Name << " has " << _AttackDamage << " attack damage!" << std::endl;
+	return (_AttackDamage);
+}
+
+int ClapTrap::getHitPoints() const
+{
+	if (_HitPoint < 1)
+	{
+		std::cout << "> ClapTrap " << _Name << " is dead!" << std::endl;
+		return 0;
+	}
+	if (_HitPoint >= 10)
+	{
+		std::cout << "> ClapTrap " << _Name << " has " << _HitPoint << " hp!" << std::endl;
+	}
+	else
+		std::cout << "> ClapTrap " << _Name << " has " << _HitPoint << " hp!" << std::endl;
+	return _HitPoint;
+	
 }
