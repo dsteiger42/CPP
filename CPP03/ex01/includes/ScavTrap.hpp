@@ -13,8 +13,8 @@
 #ifndef SCAVTRAP_H
 # define SCAVTRAP_H
 
+# include "ClapTrap.hpp"
 # include <iostream>
-#include "ClapTrap.hpp"
 
 # define RESET "\033[0m"
 # define RED "\033[31m"
@@ -28,14 +28,13 @@
 class ScavTrap : public ClapTrap
 {
   private:
-
-
   public:
-    ScavTrap();
-    ScavTrap(ScavTrap const &copy);
+	ScavTrap();
+	ScavTrap(std::string name);
+	ScavTrap(ScavTrap const &copy);
 	ScavTrap &operator=(ScavTrap const &copy);
 	~ScavTrap();
-    void guardGate();
+	void guardGate();
 };
 
 #endif

@@ -18,7 +18,7 @@ ClapTrap::ClapTrap()
 	_HitPoint = 10;
 	_EnergyPoints = 10;
 	_AttackDamage = 0;
-	std::cout << YELLOW << "> Default constructor activated" << RESET << std::endl;
+	std::cout << YELLOW << "> ClapTrap default constructor activated" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string name)
 	_HitPoint = 10;
 	_EnergyPoints = 10;
 	_AttackDamage = 0;
-	std::cout << YELLOW << "> Default constructor activated" << RESET << std::endl;
+	std::cout << YELLOW << "> ClapTrap constructor activated" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &copy)
@@ -36,7 +36,7 @@ ClapTrap::ClapTrap(ClapTrap const &copy)
 	_HitPoint = copy._HitPoint;
 	_EnergyPoints = copy._EnergyPoints;
 	_AttackDamage = copy._AttackDamage;
-	std::cout << GREEN << "> Copy constructor activated" << RESET << std::endl;
+	std::cout << GREEN << "> ClapTrap copy constructor activated" << RESET << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &copy)
@@ -48,13 +48,13 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &copy)
 		_EnergyPoints = copy._EnergyPoints;
 		_AttackDamage = copy._AttackDamage;
 	}
-	std::cout << BLUE << "> Assignment operator activated" << RESET << std::endl;
+	std::cout << BLUE << "> ClapTrap assignment operator activated" << RESET << std::endl;
 	return (*this);
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << RED << "> Destructor activated" << RESET << std::endl;
+	std::cout << RED << "> ClapTrap destructor activated" << RESET << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
@@ -93,35 +93,21 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_HitPoint < 1)
-	{
+    {
 		std::cout << "> ClapTrap " << _Name << " is dead!\n";
-		return ;
+		return;
 	}
 	if (_EnergyPoints < 1)
-	{
+    {
 		std::cout << "> You have no energy. Try cocaine\n";
-		return ;
+		return;
 	}
-	if (_HitPoint < 10)
-	{
-		if (_HitPoint + amount <= 10)
-		{
-			_HitPoint += amount;
-			_EnergyPoints--;
-			std::cout << "> ClapTrap " << _Name << " repairs itself and gained " << amount << "hp!" << std::endl;
-			std::cout << "> ClapTrap " << _Name << " now has " << _HitPoint << "hp!" << std::endl;
-		}
-		else
-		{
-			_HitPoint = 10;
-			std::cout << "> ClapTrap " << _Name << " repairs itself and is now full hp" << std::endl;
-		}
-	}
-	else
-	{
-		_HitPoint = 10;
-		std::cout << "> ClapTrap " << _Name << " is full hp" << std::endl; 
-	}
+	_HitPoint += amount;
+	if (_HitPoint > 100)
+		_HitPoint = 100;
+	_EnergyPoints--;
+	std::cout << "> ClapTrap " << _Name << " repairs itself and gained " << amount << "hp!" << std::endl;
+	std::cout << "> ClapTrap " << _Name << " now has " << _HitPoint << "hp!" << std::endl;
 }
 
 void ClapTrap::setIncreaseAttack(unsigned int amount)

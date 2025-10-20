@@ -14,25 +14,43 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-    std::cout << "ScavTrap default constructor has been called" << std::endl;
+	_HitPoint = 100;
+	_EnergyPoints = 50;
+	_AttackDamage = 20;
+	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &copy)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "ScavTrap copy constructor has been called" << std::endl;
+	_Name = name;
+	_HitPoint = 100;
+	_EnergyPoints = 50;
+	_AttackDamage = 20;
+	std::cout << "> ScravTrap constructor activated" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap const &copy) : ClapTrap(copy)
+{
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &copy)
 {
-    std::cout << "ScavTrap assignment operator has been called" << std::endl;
+	if (this != &copy)
+	{
+		ClapTrap::operator=(copy); // Reuse base class assignment
+		// No additional members to assign in ScavTrap
+		std::cout << "ScavTrap assignment operator called" << std::endl;
+	}
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap destructor has been called" << std::endl;
+	std::cout << "ScavTrap destructor has been called" << std::endl;
 }
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap is now in Gate Keeper mode" << std::endl;
+	std::cout << "> ScavTrap is now in Gate Keeper mode" << std::endl;
 }

@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 18:41:41 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/16 19:26:26 by dsteiger         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
@@ -93,35 +81,21 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_HitPoint < 1)
-	{
+    {
 		std::cout << "> ClapTrap " << _Name << " is dead!\n";
-		return ;
+		return;
 	}
 	if (_EnergyPoints < 1)
-	{
+    {
 		std::cout << "> You have no energy. Try cocaine\n";
-		return ;
+		return;
 	}
-	if (_HitPoint < 10)
-	{
-		if (_HitPoint + amount <= 10)
-		{
-			_HitPoint += amount;
-			_EnergyPoints--;
-			std::cout << "> ClapTrap " << _Name << " repairs itself and gained " << amount << "hp!" << std::endl;
-			std::cout << "> ClapTrap " << _Name << " now has " << _HitPoint << "hp!" << std::endl;
-		}
-		else
-		{
-			_HitPoint = 10;
-			std::cout << "> ClapTrap " << _Name << " repairs itself and is now full hp" << std::endl;
-		}
-	}
-	else
-	{
-		_HitPoint = 10;
-		std::cout << "> ClapTrap " << _Name << " is full hp" << std::endl; 
-	}
+	_HitPoint += amount;
+	if (_HitPoint > 100)
+		_HitPoint = 100;
+	_EnergyPoints--;
+	std::cout << "> ClapTrap " << _Name << " repairs itself and gained " << amount << "hp!" << std::endl;
+	std::cout << "> ClapTrap " << _Name << " now has " << _HitPoint << "hp!" << std::endl;
 }
 
 void ClapTrap::setIncreaseAttack(unsigned int amount)

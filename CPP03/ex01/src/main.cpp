@@ -12,8 +12,23 @@
 
 #include "../includes/ScavTrap.hpp"
 
-int main(void)
+int	main(void)
 {
-    ScavTrap scaptrap;
+	ScavTrap scavtrap;
+	ScavTrap scavtrap2(scavtrap);
+	ScavTrap scavtrap3;
+	ScavTrap scavtrap4("Sauron");
+	scavtrap3 = scavtrap;
 
+	scavtrap.guardGate();
+	scavtrap.attack("Sauron");
+	scavtrap4.takeDamage(scavtrap.getAttackDamage());
+	scavtrap4.beRepaired(40);
+	std::cout << "> Energy points left: " << scavtrap.getEnergyPoints() << std::endl;
+	scavtrap.setIncreaseAttack(2);
+	scavtrap.attack("Sauron");
+	scavtrap4.takeDamage(scavtrap.getAttackDamage());
+	scavtrap4.getHitPoints();
+	scavtrap4.beRepaired(3);
+	scavtrap4.getHitPoints();
 }
