@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 17:57:47 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/20 17:57:48 by dsteiger         ###   ########.fr       */
+/*   Created: 2025/10/20 17:50:14 by dsteiger          #+#    #+#             */
+/*   Updated: 2025/10/20 18:20:15 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/DiamondTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int	main(void)
+# include "Animal.hpp"
+
+class Cat : public Animal
 {
-	DiamondTrap diamond;
-	diamond.attack("Sauron");
-	diamond.whoAmI();
-}
+	public:
+		Cat(void);
+		Cat(Cat const &copy);
+		Cat &operator=(Cat const &copy);
+		~Cat(void);
+		void	makeSound(void) const;
+
+};
+
+#endif

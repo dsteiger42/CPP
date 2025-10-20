@@ -6,7 +6,7 @@
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:15:51 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/16 18:16:58 by dsteiger         ###   ########.fr       */
+/*   Updated: 2025/10/20 16:52:08 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &copy)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor has been called" << std::endl;
+}
+
+void ScavTrap::attack(std::string const &target)
+{
+	std::cout << "ScavTrap " << _Name << " attacks " << target
+		<< ", causing " << _AttackDamage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate()

@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 17:57:47 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/20 17:57:48 by dsteiger         ###   ########.fr       */
+/*   Created: 2025/10/20 17:50:11 by dsteiger          #+#    #+#             */
+/*   Updated: 2025/10/20 18:15:15 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/DiamondTrap.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int	main(void)
+#include <iostream>
+
+class Animal
 {
-	DiamondTrap diamond;
-	diamond.attack("Sauron");
-	diamond.whoAmI();
-}
+    protected:
+        std::string _type;
+    public:
+        Animal();
+        Animal(const Animal &copy);
+        Animal &operator=(const Animal &copy);
+        ~Animal();
+        void makeSound();
+        std::string getType();
+};
+
+#endif

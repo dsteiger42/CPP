@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/20 17:57:50 by dsteiger          #+#    #+#             */
+/*   Updated: 2025/10/20 17:57:51 by dsteiger         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ScavTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap()
@@ -36,6 +48,12 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &copy)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor has been called" << std::endl;
+}
+
+void ScavTrap::attack(std::string const &target)
+{
+	std::cout << "ScavTrap " << _Name << " attacks " << target
+		<< ", causing " << _AttackDamage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate()

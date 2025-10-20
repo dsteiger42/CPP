@@ -6,12 +6,12 @@
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:16:00 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/16 18:16:01 by dsteiger         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:22:55 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
 # include <iostream>
@@ -34,6 +34,7 @@ class ScavTrap : public ClapTrap
 	ScavTrap(ScavTrap const &copy);
 	ScavTrap &operator=(ScavTrap const &copy);
 	~ScavTrap();
+	void attack(std::string const &target);
 	void guardGate();
 };
 

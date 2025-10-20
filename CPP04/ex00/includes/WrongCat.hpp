@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 17:57:47 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/20 17:57:48 by dsteiger         ###   ########.fr       */
+/*   Created: 2025/10/20 18:12:38 by dsteiger          #+#    #+#             */
+/*   Updated: 2025/10/20 18:20:23 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/DiamondTrap.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int	main(void)
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	DiamondTrap diamond;
-	diamond.attack("Sauron");
-	diamond.whoAmI();
-}
+	public:
+		WrongCat(void);
+		WrongCat(WrongCat const &copy);
+		WrongCat &operator=(WrongCat const &copy);
+		~WrongCat(void);
+		void	makeSound(void) const;
+
+};
+
+#endif

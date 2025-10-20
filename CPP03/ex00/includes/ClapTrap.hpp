@@ -6,12 +6,12 @@
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:41:53 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/16 18:41:56 by dsteiger         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:23:02 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-# define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
 

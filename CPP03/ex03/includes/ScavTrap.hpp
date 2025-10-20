@@ -1,5 +1,17 @@
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/20 17:58:01 by dsteiger          #+#    #+#             */
+/*   Updated: 2025/10/20 18:22:18 by dsteiger         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
 # include "ClapTrap.hpp"
@@ -22,6 +34,7 @@ class ScavTrap : virtual public ClapTrap
 	ScavTrap(ScavTrap const &copy);
 	ScavTrap &operator=(ScavTrap const &copy);
 	~ScavTrap();
+	void attack(std::string const &target);
 	void guardGate();
 };
 

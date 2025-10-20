@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 17:57:47 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/20 17:57:48 by dsteiger         ###   ########.fr       */
+/*   Created: 2025/10/20 18:12:29 by dsteiger          #+#    #+#             */
+/*   Updated: 2025/10/20 18:18:04 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/DiamondTrap.hpp"
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-int	main(void)
+#include <iostream>
+
+class WrongAnimal
 {
-	DiamondTrap diamond;
-	diamond.attack("Sauron");
-	diamond.whoAmI();
-}
+    protected:
+        std::string _type;
+    public:
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal &copy);
+        WrongAnimal &operator=(const WrongAnimal &copy);
+        ~WrongAnimal();
+        void makeSound();
+        std::string getType();
+};
+
+#endif

@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 17:57:47 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/20 17:57:48 by dsteiger         ###   ########.fr       */
+/*   Created: 2025/10/20 17:50:05 by dsteiger          #+#    #+#             */
+/*   Updated: 2025/10/20 18:20:06 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/DiamondTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int	main(void)
+# include "Animal.hpp"
+
+class Dog : public Animal
 {
-	DiamondTrap diamond;
-	diamond.attack("Sauron");
-	diamond.whoAmI();
-}
+	public:
+		Dog(void);
+		Dog(Dog const & copy);
+		Dog &operator=(Dog const &copy);
+		~Dog(void);
+		void	makeSound(void) const;
+};
+
+#endif
