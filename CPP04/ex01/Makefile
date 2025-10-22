@@ -1,4 +1,4 @@
-NAME = Polymorphism
+NAME = Brain
 
 SRCS = src/main.cpp \
 		src/Animal.cpp \

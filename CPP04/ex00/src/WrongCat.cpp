@@ -14,13 +14,13 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
-    this->_type = "WrongCat";
-    std::cout << "WrongCat default constructor called" << std::endl;
+	this->_type = "WrongCat";
+	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal()
 {
-    this->_type = copy._type;
+	this->_type = copy._type;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &copy)
@@ -32,10 +32,10 @@ WrongCat &WrongCat::operator=(const WrongCat &copy)
 
 WrongCat::~WrongCat()
 {
-    std::cout << "WrongCat destructor called" << std::endl;
+	std::cout << "WrongCat destructor called" << std::endl;
 }
 
-void WrongAnimal::makeSound()
+void WrongCat::makeSound() const
 {
-    std::cout << _type << std::endl;
+	std::cout << _type << " mehhhh" << std::endl;
 }

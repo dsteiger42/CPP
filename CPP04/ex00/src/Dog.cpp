@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
+#include "../includes/Dog.hpp"
 
 Dog::Dog() : Animal()
 {
-    this->_type = "Dog";
-    std::cout << "Dog default constructor called" << std::endl;
+	this->_type = "Dog";
+	std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &copy) : Animal()
 {
-    this->_type = copy._type;
+	this->_type = copy._type;
 }
 
 Dog &Dog::operator=(const Dog &copy)
@@ -32,10 +32,10 @@ Dog &Dog::operator=(const Dog &copy)
 
 Dog::~Dog()
 {
-    std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 void Dog::makeSound() const
 {
-    std::cout << _type << std::endl;
+	std::cout << _type << "-> ruf ruf" << std::endl;
 }

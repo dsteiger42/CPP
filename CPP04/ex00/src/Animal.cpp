@@ -14,12 +14,13 @@
 
 Animal::Animal()
 {
-    std::cout << "Animal default constructor called" << std::endl;
+	_type = "Default";
+	std::cout << "Animal default constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal &copy)
 {
-    this->_type = copy._type;
+	this->_type = copy._type;
 }
 
 Animal &Animal::operator=(const Animal &copy)
@@ -31,15 +32,15 @@ Animal &Animal::operator=(const Animal &copy)
 
 Animal::~Animal()
 {
-    std::cout << "Animal destructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
-    std::cout << _type << std::endl;
+	std::cout << _type << " smells like shit" << std::endl;
 }
 
-std::string Animal::getType()
+std::string Animal::getType() const
 {
-    return this->_type;
+	return (this->_type);
 }

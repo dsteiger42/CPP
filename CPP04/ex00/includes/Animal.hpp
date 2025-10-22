@@ -10,22 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+/*
+virtual makes both dog and cat be destroyed,
+instead of animal destroyed 3x.
+Virtual tells the compiler that a function
+might be overriden by the Derived Class.
+Doesnt decide at compile time, but at runtime.
 
-#include <iostream>
+Note: you can't make a member function virtual without
+making the destructor also virtual.
+*/
+
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+
+# include <iostream>
 
 class Animal
 {
-    protected:
-        std::string _type;
-    public:
-        Animal();
-        Animal(const Animal &copy);
-        Animal &operator=(const Animal &copy);
-        ~Animal();
-        void makeSound();
-        std::string getType();
+  protected:
+	std::string _type;
+
+  public:
+	Animal();
+	Animal(const Animal &copy);
+	Animal &operator=(const Animal &copy);
+	virtual ~Animal();
+	virtual void makeSound() const;
+	std::string getType() const;
 };
 
 #endif
