@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/24 15:51:58 by dsteiger          #+#    #+#             */
+/*   Updated: 2025/10/24 15:51:59 by dsteiger         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Brain.hpp"
 
 Brain::Brain()
@@ -21,10 +33,6 @@ Brain &Brain::operator=(const Brain &copy)
 Brain::~Brain()
 {
 	std::cout << "Brain destructor called" << std::endl;
-}
-
-void Brain::setIdea(int index, std::string idea)
-{
 }
 
 std::string Brain::getIdea(int index) const

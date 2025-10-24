@@ -6,7 +6,7 @@
 /*   By: dsteiger <dsteiger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:57:42 by dsteiger          #+#    #+#             */
-/*   Updated: 2025/10/20 17:57:43 by dsteiger         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:52:21 by dsteiger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap() : ClapTrap()
 	_HitPoint = 100;
 	_EnergyPoints = 100;
 	_AttackDamage = 30;
-	std::cout << "FragTrap default constructor called" << std::endl;
+	std::cout << "FragTrap3 default constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -26,12 +26,12 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	_HitPoint = 100;
 	_EnergyPoints = 100;
 	_AttackDamage = 30;
-	std::cout << "> FragTrap constructor activated" << std::endl;
+	std::cout << "> FragTrap3 constructor activated" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &copy) : ClapTrap(copy)
 {
-	std::cout << "FragTrap copy constructor called" << std::endl;
+	std::cout << "FragTrap3 copy constructor called" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &copy)
@@ -40,14 +40,14 @@ FragTrap &FragTrap::operator=(FragTrap const &copy)
 	{
 		ClapTrap::operator=(copy); // Reuse base class assignment
 		// No additional members to assign in FragTrap
-		std::cout << "FragTrap assignment operator called" << std::endl;
+		std::cout << "FragTrap3 assignment operator called" << std::endl;
 	}
 	return (*this);
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap destructor has been called" << std::endl;
+	std::cout << "FragTrap3 destructor has been called" << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)
